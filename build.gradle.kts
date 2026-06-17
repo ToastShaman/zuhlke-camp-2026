@@ -12,6 +12,7 @@ repositories {
 
 dependencies {
     val http4kVersion = "6.53.0.0"
+    val forkhandlesVersion = "2.22.3.0"
     val kotshiVersion = "4.0.0"
     val junitVersion = "6.1.0"
 
@@ -22,6 +23,9 @@ dependencies {
     implementation("org.http4k:http4k-client-okhttp")
     implementation("org.http4k:http4k-format-moshi")
     runtimeOnly("org.slf4j:slf4j-simple:2.0.17")
+
+    implementation("dev.forkhandles:values4k:$forkhandlesVersion")
+    implementation("dev.forkhandles:result4k:$forkhandlesVersion")
 
     implementation("com.squareup.moshi:moshi:1.15.2")
     implementation("se.ansman.kotshi:api:$kotshiVersion")
