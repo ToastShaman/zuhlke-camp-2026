@@ -11,19 +11,22 @@ repositories {
 }
 
 dependencies {
-    val http4kVersion = "6.52.0.0"
+    val http4kVersion = "6.53.0.0"
     val kotshiVersion = "4.0.0"
+    val junitVersion = "6.1.0"
 
-    implementation("org.http4k:http4k-core:$http4kVersion")
-    implementation("org.http4k:http4k-server-jetty:$http4kVersion")
-    implementation("org.http4k:http4k-client-okhttp:$http4kVersion")
-    implementation("org.http4k:http4k-format-moshi:$http4kVersion")
+    implementation(platform("org.http4k:http4k-bom:$http4kVersion"))
+
+    implementation("org.http4k:http4k-core")
+    implementation("org.http4k:http4k-server-jetty")
+    implementation("org.http4k:http4k-client-okhttp")
+    implementation("org.http4k:http4k-format-moshi")
 
     implementation("com.squareup.moshi:moshi:1.15.2")
     implementation("se.ansman.kotshi:api:$kotshiVersion")
     ksp("se.ansman.kotshi:compiler:$kotshiVersion")
 
-    testImplementation(platform("org.junit:junit-bom:6.1.0"))
+    testImplementation(platform("org.junit:junit-bom:$junitVersion"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     testImplementation("io.strikt:strikt-core:0.35.1")
