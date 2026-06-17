@@ -21,6 +21,7 @@ dependencies {
     implementation("org.http4k:http4k-server-jetty")
     implementation("org.http4k:http4k-client-okhttp")
     implementation("org.http4k:http4k-format-moshi")
+    runtimeOnly("org.slf4j:slf4j-simple:2.0.17")
 
     implementation("com.squareup.moshi:moshi:1.15.2")
     implementation("se.ansman.kotshi:api:$kotshiVersion")
